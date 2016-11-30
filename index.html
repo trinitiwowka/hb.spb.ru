@@ -529,7 +529,7 @@
     <div class="screen ">
         <div class="alle_work-block">
             <a href="#"
-               onclick="popup('request','|Зарегистрироваться','Получить актуальный прайс','Введите адресс электронной почты  ','Отправить себе на почту');"
+               onclick="popup('price','|Зарегистрироваться','Получить актуальный прайс','Введите адресс электронной почты  ','Отправить себе на почту');"
                class="alle_work">
                 <div><img src="img/pic_2.png" alt=""></div>
                 <div><span>Посмотреть весь прайс</span></div>
@@ -701,6 +701,26 @@
         </form>
     </div>
 </div>
+
+<div class="popup" id="price">
+    <div class="popup__indoor">
+        <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
+        <div class="popup_h1">Оставьте заявку</div>
+        <div class="popup_h2">
+            Оставьте заявку, и наш специалист свяжется
+            <br> с вами в ближайшее время.
+        </div>
+        <form>
+            <div class="">
+                <label class="name required">
+                    <input type="email" name="name" placeholder="Введите Ваш e-mail">
+                </label>
+            </div>
+            <div data-name="request" class="button noselect btn">Заказать</div>
+        </form>
+    </div>
+</div>
+
 <div class="popup" id="question">
     <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
     <div class="popup_h1">Задать вопрос</div>
