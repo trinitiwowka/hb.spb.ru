@@ -2,200 +2,195 @@
 <html lang="ru">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
-  <title>Футболки оптом</title>
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="img/favicon1.ico" type="image/x-icon">
-  <link href="css/fonts.css" rel="stylesheet" type="text/css">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-  <link href="css/media.css" rel="stylesheet" type="text/css">
-  <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
-  <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-  <script src="js/pyramid22.js" type="text/javascript"></script>
-  <script src="http://maps.google.com/maps/api/js?key=AIzaSyDqMMS75VvByHH5iqyW1D9oAaZdAmdiBLY"></script>
-  <script type="text/javascript" src="js/scripts.js"></script>
-  <script type="text/javascript">
-    /***********************************************************************************************/
-    var map;
-    var chicago = new google.maps.LatLng(59.899472, 30.4010128);
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
+    <title>Футболки оптом</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon1.ico" type="image/x-icon">
+    <link href="css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="css/media.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/pyramid22.js" type="text/javascript"></script>
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyDqMMS75VvByHH5iqyW1D9oAaZdAmdiBLY"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript">
+        /***********************************************************************************************/
+        var map;
+        var chicago = new google.maps.LatLng(59.899472, 30.4010128);
 
-    function initialize() {
+        function initialize() {
 
-      var roadAtlasStyles = [
-        {
-          "featureType": "road.highway",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "saturation": -100
-            },
-            {
-              "lightness": -8
-            },
-            {
-              "gamma": 1.18
-            }
-          ]
-      }, {
-          "featureType": "road.arterial",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "saturation": -100
-            },
-            {
-              "gamma": 1
-            },
-            {
-              "lightness": -24
-            }
-          ]
-      }, {
-          "featureType": "poi",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "administrative",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "transit",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "water",
-          "elementType": "geometry.fill",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "road",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "administrative",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "landscape",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {
-          "featureType": "poi",
-          "stylers": [
-            {
-              "saturation": -100
-            }
-          ]
-      }, {}
-                ]
+            var roadAtlasStyles = [
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "lightness": -8
+                        },
+                        {
+                            "gamma": 1.18
+                        }
+                    ]
+                }, {
+                    "featureType": "road.arterial",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        },
+                        {
+                            "gamma": 1
+                        },
+                        {
+                            "lightness": -24
+                        }
+                    ]
+                }, {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "administrative",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "transit",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "water",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "road",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "administrative",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "landscape",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {
+                    "featureType": "poi",
+                    "stylers": [
+                        {
+                            "saturation": -100
+                        }
+                    ]
+                }, {}
+            ]
 
-      var mapOptions = {
-        zoom: 17,
-        center: chicago,
-        scrollwheel: false,
-        mapTypeControlOptions: {
-          mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'usroadatlas']
-        },
-
-
+            var mapOptions = {
+                zoom: 17,
+                center: chicago,
+                scrollwheel: false,
+                mapTypeControlOptions: {
+                    mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'usroadatlas']
+                },
 
 
+                panControl: true,
+                panControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
+                },
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.LARGE,
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
+                },
+                scaleControl: true,
+                scaleControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
+                },
+                streetViewControl: true,
+                streetViewControlOptions: {
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
+                }
 
-        panControl: true,
-        panControlOptions: {
-          position: google.maps.ControlPosition.LEFT_BOTTOM
-        },
-        zoomControl: true,
-        zoomControlOptions: {
-          style: google.maps.ZoomControlStyle.LARGE,
-          position: google.maps.ControlPosition.LEFT_BOTTOM
-        },
-        scaleControl: true,
-        scaleControlOptions: {
-          position: google.maps.ControlPosition.LEFT_BOTTOM
-        },
-        streetViewControl: true,
-        streetViewControlOptions: {
-          position: google.maps.ControlPosition.LEFT_BOTTOM
+
+            };
+
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+            var marker1 = new google.maps.LatLng(59.899472, 30.4010128);
+            var image = 'img/location.png';
+            var beachMarker = new google.maps.Marker({
+                position: marker1,
+                map: map,
+                icon: image
+            });
+            var styledMapOptions = {};
+
+            var usRoadMapType = new google.maps.StyledMapType(
+                    roadAtlasStyles, styledMapOptions);
+
+            map.mapTypes.set('usroadatlas', usRoadMapType);
+            map.setMapTypeId('usroadatlas');
         }
-
-
-      };
-
-      map = new google.maps.Map(document.getElementById('map-canvas'),
-        mapOptions);
-      var marker1 = new google.maps.LatLng(59.899472, 30.4010128);
-      var image = 'img/location.png';
-      var beachMarker = new google.maps.Marker({
-        position: marker1,
-        map: map,
-        icon: image
-      });
-      var styledMapOptions = {
-
-      };
-
-      var usRoadMapType = new google.maps.StyledMapType(
-        roadAtlasStyles, styledMapOptions);
-
-      map.mapTypes.set('usroadatlas', usRoadMapType);
-      map.setMapTypeId('usroadatlas');
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    /***********************************************************************************************/
-  </script>
+        google.maps.event.addDomListener(window, 'load', initialize);
+        /***********************************************************************************************/
+    </script>
 
 </head>
 
 <body id="body">
 
-  <!--beginning menu-mobile-->
-  <div class="wrapper__menu">
+<!--beginning menu-mobile-->
+<div class="wrapper__menu">
     <div class="wrapper__menu__indoor clearfix">
-      <div class="wrapper__menu__logo">
-        <img src="img/little.svg" alt="">
-      </div>
-      <div class="wrapper__menu__control">
-        <div class="wrapper__menu__control__indoor wrapper__menu__control__indoor--1"></div>
-        <div class="wrapper__menu__control__indoor wrapper__menu__control__indoor--2"></div>
-      </div>
+        <div class="wrapper__menu__logo">
+            <img src="img/little.svg" alt="">
+        </div>
+        <div class="wrapper__menu__control">
+            <div class="wrapper__menu__control__indoor wrapper__menu__control__indoor--1"></div>
+            <div class="wrapper__menu__control__indoor wrapper__menu__control__indoor--2"></div>
+        </div>
     </div>
     <ul class="wrapper__nav">
-      <li><a href="#screen1">Главная</a></li>
-      <li><a href="#screen2">Работы</a></li>
-      <li><a href="#screen3">Контакты</a></li>
-      <li><a href="http://kladovka.mokselle.ru/">Блог</a></li>
+        <li><a href="#screen1">Главная</a></li>
+        <li><a href="#screen2">Работы</a></li>
+        <li><a href="#screen3">Контакты</a></li>
+        <li><a href="http://kladovka.mokselle.ru/">Блог</a></li>
     </ul>
-  </div>
-  <!--end menu-mobile-->
-  <!--beginning bg-->
-  <div class="bg">
+</div>
+<!--end menu-mobile-->
+<!--beginning bg-->
+<div class="bg">
     <div class="bg__logo">
-      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 65.2 65.2" xml:space="preserve">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 65.2 65.2" xml:space="preserve">
         <polyline id="XMLID_15_" class="bg__logo__polyline" points="65.3,35.8 65.3,42.6 65.3,65.2 0,65.2 0,0 65.3,0 65.3,35.8 "></polyline>
         <path id="XMLID_13_" class="bg__logo__path bg__logo__path0" d="M23.8,31.2h-2.6l0-7.1c0,0,0-0.1,0-0.1c-0.3,1-2.2,5.2-2.8,6.8c-0.1,0.3-0.3,0.5-0.6,0.4
                     c-0.5,0-1.1,0-1.6,0c-0.3,0-0.4-0.1-0.6-0.4c-0.7-2.1-2.5-6.4-2.5-6.4l-0.2-0.4l0,7.2h-2.6v-11c0,0,2.4,0,3.3,0
@@ -225,27 +220,39 @@
         <rect id="XMLID_2_" x="48.3" y="39.4" class="bg__logo__path  bg__logo__path7" width="7.9" height="2.1"></rect>
       </svg>
     </div>
-  </div>
-  <!--end bg-->
-  <!--beginning menu-->
-  <div class="menu">
-    <img src="img/desctop.svg" class="menu__logo" alt="">
+</div>
+<!--end bg-->
+<!--beginning menu-->
+<div class="menu">
     <ul class="menu__list">
-      <li>
-        <a href=".screen1">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36" height="75" viewbox="0 0 21.3 19.3" xml:space="preserve">
+
+        <li>
+            <a href=".screen1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="36" height="75">
+                    <path class="menu__list__path menu__list__path5" d="M214.7 402.8c-24.8 0-45 20.2-45 45 0 24.8 20.2 45 45 45s45-20.2 45-45C259.7 423 239.5 402.8 214.7 402.8zM214.7 467.7c-11 0-19.9-8.9-19.9-19.9 0-11 8.9-19.9 19.9-19.9s19.9 8.9 19.9 19.9C234.6 458.8 225.7 467.7 214.7 467.7z"/>
+                    <path class="menu__list__path menu__list__path5" d="M372.6 402.8c-24.8 0-45 20.2-45 45 0 24.8 20.2 45 45 45s45-20.2 45-45C417.7 423 397.5 402.8 372.6 402.8zM372.6 467.7c-11 0-19.9-8.9-19.9-19.9 0-11 8.9-19.9 19.9-19.9 11 0 19.9 8.9 19.9 19.9C392.5 458.8 383.6 467.7 372.6 467.7z"/>
+                    <path class="menu__list__path menu__list__path5" d="M383.7 165.8H203.6c-6.9 0-12.6 5.6-12.6 12.6 0 6.9 5.6 12.6 12.6 12.6h180.1c6.9 0 12.6-5.6 12.6-12.6C396.3 171.4 390.7 165.8 383.7 165.8z"/>
+                    <path class="menu__list__path menu__list__path5" d="M373.9 231H213.4c-6.9 0-12.6 5.6-12.6 12.6s5.6 12.6 12.6 12.6h160.5c6.9 0 12.6-5.6 12.6-12.6C386.5 236.7 380.9 231 373.9 231z"/>
+                    <path class="menu__list__path menu__list__path5" d="M506.3 109.7c-4.8-5.9-11.9-9.3-19.5-9.3H95.3L87.4 62.1c-1.7-8-7.1-14.7-14.6-18l-55.2-23.9c-6.4-2.8-13.8 0.2-16.5 6.5 -2.8 6.4 0.2 13.8 6.5 16.5L62.7 67.2l60.8 295.3c2.4 11.6 12.8 20.1 24.6 20.1h301.2c6.9 0 12.6-5.6 12.6-12.6 0-6.9-5.6-12.6-12.6-12.6H148.2l-7.4-35.9H451.7c11.9 0 22.2-8.4 24.6-20.1l35.2-170.7C513 123.3 511.1 115.6 506.3 109.7zM451.7 296.3H135.6l-35.2-170.7 386.4 0L451.7 296.3z"/>
+                </svg>
+            </a>
+        </li>
+
+        <li>
+            <a href=".screen1">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="36" height="75" viewbox="0 0 21.3 19.3" xml:space="preserve">
             <path id="XMLID_3_" class="menu__list__path menu__list__path0" d="M3.1,9.6v8.3c0,0.5,0.4,0.9,1,0.9h2.7c0.5,0,1-0.4,1-0.9v-4.4c0-0.5,0.4-0.9,1-0.9h4
                           c0.5,0,1,0.4,1,0.9v4.4c0,0.5,0.4,0.9,1,0.9h2.5c0.5,0,1-0.4,1-0.9V9.6"></path>
             <path id="XMLID_2_" class="menu__list__path menu__list__path0" d="M0.3,9L10,0.7c0.3-0.3,0.9-0.3,1.2,0L15.3,4V2.3c0-0.5,0.4-0.9,1-0.9h0.8c0.5,0,1,0.4,1,0.9v3.3
                           c0,0.2,0.1,0.5,0.3,0.7L21,8.9"></path>
           </svg>
-        </a>
-      </li>
+            </a>
+        </li>
 
-      <li>
-        <a href="#">
+        <li>
+            <a href="#">
 
-          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 489 489" xml:space="preserve" width="45px" height="75px">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 489 489" xml:space="preserve" width="45px" height="75px">
             <g>
               <g>
                 <path id="XMLID_1_" class="menu__list__path menu__list__path4" d="M247.298,336.8c-5.9,5.9-5.9,15.6,0,21.5s15.6,5.9,21.5,0s5.9-15.6,0-21.5C262.898,330.8,253.198,330.8,247.298,336.8z" />
@@ -253,41 +260,57 @@
                 <path id="XMLID_3_" class="menu__list__path menu__list__path4" d="M414.498,31c-4.7-11.4-19.1-30.6-62.9-31c-0.5,0-0.9,0-1.4,0c-26.9,0-58.9,7.1-90.4,20.1c-5.8,2.4-11.4,4.9-16.8,7.6    l-0.3-0.3c-18-17.5-46.7-17.5-64.7,0l-88.2,85.7c-11.7,11.3-18.3,26.9-18.3,43.2v290.3c0,23.4,19,42.4,42.4,42.4h193    c23.4,0,42.4-19,42.4-42.4V156.3c0-8.3-1.7-16.5-5-23.9c18.7-10.5,35-22.5,47.5-35.1C422.398,66.2,419.198,42.4,414.498,31z     M124.498,285.7c0-20.2,16.5-36.7,36.7-36.7s36.7,16.5,36.7,36.7s-16.5,36.7-36.7,36.7C140.998,322.4,124.598,306,124.498,285.7z     M155.698,381.7c-3.8-3.2-4.3-8.8-1.2-12.6l96.4-116.1c3.2-3.8,8.8-4.3,12.6-1.2c3.8,3.2,4.3,8.8,1.2,12.6l-96.4,116.1    C165.098,384.3,159.498,384.8,155.698,381.7z M258.098,384.3c-20.2,0-36.7-16.5-36.7-36.7s16.5-36.7,36.7-36.7    c20.2,0,36.7,16.5,36.7,36.7C294.798,367.8,278.298,384.3,258.098,384.3z M298.798,114.7c-18.4,7.6-37.3,13-54.5,15.6    c0,0.8,0.1,1.5,0.1,2.3c0,19.4-15.7,35.1-35.1,35.1s-35.1-15.7-35.1-35.1s15.7-35.1,35.1-35.1c11.6,0,21.8,5.6,28.2,14.2    c16.3-2.8,33.9-7.9,51.2-15c6.1-2.5,11.8-5.1,17.2-7.8l-35.4-34.5c1-0.4,2-0.8,3-1.3c26.9-11.1,54.8-17.4,76.8-17.4    c0.3,0,0.7,0,1,0c21.1,0.2,29,5.9,30.2,8.9C385.198,53.8,361.698,88.8,298.798,114.7z" />
               </g>
           </svg>
-        </a>
-      </li>
+            </a>
+        </li>
 
-      <li>
-        <a href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.3 407.3" width="35px" height="75px">
-            <path class="menu__list__path menu__list__path4" d="M345.7 226.6V398.3c0 5-4 9-9 9H70.5c-5 0-9-4-9-9V226.6c0-5 4-9 9-9s9 4 9 9V389.3h248.2V226.6c0-5 4-9 9-9S345.7 221.6 345.7 226.6zM407.3 58v131.5c0 5-4 9-9 9l-95.1 0c0 0-4.6 0.2-6.5-1 -2-1.2-4.4-2.8-4.6-7.4 -0.1-1.8-0.1-3.7-0.1-3.7v-65.9c0-5 4-9 9-9s9 4 9 9v59.9l79.3 0V63l-71.2-44.6h-32.4v9.1c0 31.8-25.9 57.7-57.7 57.7h-48.7c-31.8 0-57.7-25.9-57.7-57.7v-9.4H89.2L18 62.6v117.5l79.3 0v-59.6c0-5 4-9 9-9s9 4 9 9v68.6c0 0 0 0 0 0s0.1 8.7-9 9c0 0 0 0 0 0l-97.3 0c-5 0-9-4-9-9V57.7c0-3.1 1.6-6 4.2-7.6L81.9 1.4c1.4-0.9 3.1-1.4 4.8-1.4l234 0.3c1.7 0 3.3 0.5 4.8 1.4l77.6 48.7C405.7 52 407.3 54.9 407.3 58zM267.6 18H139.6v9.4c0 21.9 17.8 39.7 39.7 39.7h48.7c21.9 0 39.7-17.8 39.7-39.7V18z" fill="#fb520c" />
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href=".screen-little">
-          <svg version="1.1"=="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 18.4 21.3" width="34" height="75" xml:space="preserve">
-            <path id="XMLID_14_" class="menu__list__path menu__list__path2" d="M16.9,20.7H3.5c-0.6,0-1.1-0.5-1.1-1.1V1.6c0-0.6,0.5-1.1,1.1-1.1h13.4c0.6,0,1.1,0.5,1.1,1.1
+        <li>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.3 407.3" width="35px" height="75px">
+                    <path class="menu__list__path menu__list__path4"
+                          d="M345.7 226.6V398.3c0 5-4 9-9 9H70.5c-5 0-9-4-9-9V226.6c0-5 4-9 9-9s9 4 9 9V389.3h248.2V226.6c0-5 4-9 9-9S345.7 221.6 345.7 226.6zM407.3 58v131.5c0 5-4 9-9 9l-95.1 0c0 0-4.6 0.2-6.5-1 -2-1.2-4.4-2.8-4.6-7.4 -0.1-1.8-0.1-3.7-0.1-3.7v-65.9c0-5 4-9 9-9s9 4 9 9v59.9l79.3 0V63l-71.2-44.6h-32.4v9.1c0 31.8-25.9 57.7-57.7 57.7h-48.7c-31.8 0-57.7-25.9-57.7-57.7v-9.4H89.2L18 62.6v117.5l79.3 0v-59.6c0-5 4-9 9-9s9 4 9 9v68.6c0 0 0 0 0 0s0.1 8.7-9 9c0 0 0 0 0 0l-97.3 0c-5 0-9-4-9-9V57.7c0-3.1 1.6-6 4.2-7.6L81.9 1.4c1.4-0.9 3.1-1.4 4.8-1.4l234 0.3c1.7 0 3.3 0.5 4.8 1.4l77.6 48.7C405.7 52 407.3 54.9 407.3 58zM267.6 18H139.6v9.4c0 21.9 17.8 39.7 39.7 39.7h48.7c21.9 0 39.7-17.8 39.7-39.7V18z"
+                          fill="#fb520c"/>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href=".screen-little">
+                <svg version="1.1"
+                =="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewbox="0 0 18.4 21.3" width="34" height="75" xml:space="preserve">
+                <path id="XMLID_14_" class="menu__list__path menu__list__path2" d="M16.9,20.7H3.5c-0.6,0-1.1-0.5-1.1-1.1V1.6c0-0.6,0.5-1.1,1.1-1.1h13.4c0.6,0,1.1,0.5,1.1,1.1
                           v18.1C17.9,20.3,17.5,20.7,16.9,20.7z"></path>
-            <path id="XMLID_13_" class="menu__list__path menu__list__path2" d="M4.2,20.7H1.6c-0.6,0-1.1-0.5-1.1-1V4c0-0.6,0.5-1,1.1-1h1"></path>
-            <line id="XMLID_12_" class="menu__list__path menu__list__path2" x1="4.7" y1="3.6" x2="9.2" y2="3.6"></line>
-            <line id="XMLID_11_" class="menu__list__path menu__list__path2" x1="10.9" y1="3.6" x2="15.4" y2="3.6"></line>
-            <line id="XMLID_10_" class="menu__list__path menu__list__path2" x1="4.7" y1="6.2" x2="9.2" y2="6.2"></line>
-            <line id="XMLID_9_" class="menu__list__path menu__list__path2" x1="4.7" y1="8.4" x2="9.2" y2="8.4"></line>
-            <line id="XMLID_8_" class="menu__list__path menu__list__path2" x1="4.7" y1="10.7" x2="9.2" y2="10.7"></line>
-            <line id="XMLID_7_" class="menu__list__path menu__list__path2" x1="4.7" y1="13.2" x2="9.2" y2="13.2"></line>
-            <line id="XMLID_6_" class="menu__list__path menu__list__path2" x1="4.7" y1="15.5" x2="9.2" y2="15.5"></line>
-            <line id="XMLID_5_" class="menu__list__path menu__list__path2" x1="10.9" y1="15.5" x2="15.4" y2="15.5"></line>
-            <line id="XMLID_4_" class="menu__list__path menu__list__path2" x1="4.9" y1="17.7" x2="9.4" y2="17.7"></line>
-            <line id="XMLID_3_" class="menu__list__path menu__list__path2" x1="11.1" y1="17.7" x2="15.6" y2="17.7"></line>
-            <line id="XMLID_2_" class="menu__list__path menu__list__path2" x1="10.9" y1="13.2" x2="15.4" y2="13.2"></line>
-            <path id="XMLID_1_" class="menu__list__path menu__list__path2" d="M13.9,10.7h-1.6c-0.6,0-1.1-0.5-1.1-1.1V7.3c0-0.6,0.5-1.1,1.1-1.1h1.6c0.6,0,1.1,0.5,1.1,1.1
+                <path id="XMLID_13_" class="menu__list__path menu__list__path2"
+                      d="M4.2,20.7H1.6c-0.6,0-1.1-0.5-1.1-1V4c0-0.6,0.5-1,1.1-1h1"></path>
+                <line id="XMLID_12_" class="menu__list__path menu__list__path2" x1="4.7" y1="3.6" x2="9.2"
+                      y2="3.6"></line>
+                <line id="XMLID_11_" class="menu__list__path menu__list__path2" x1="10.9" y1="3.6" x2="15.4"
+                      y2="3.6"></line>
+                <line id="XMLID_10_" class="menu__list__path menu__list__path2" x1="4.7" y1="6.2" x2="9.2"
+                      y2="6.2"></line>
+                <line id="XMLID_9_" class="menu__list__path menu__list__path2" x1="4.7" y1="8.4" x2="9.2"
+                      y2="8.4"></line>
+                <line id="XMLID_8_" class="menu__list__path menu__list__path2" x1="4.7" y1="10.7" x2="9.2"
+                      y2="10.7"></line>
+                <line id="XMLID_7_" class="menu__list__path menu__list__path2" x1="4.7" y1="13.2" x2="9.2"
+                      y2="13.2"></line>
+                <line id="XMLID_6_" class="menu__list__path menu__list__path2" x1="4.7" y1="15.5" x2="9.2"
+                      y2="15.5"></line>
+                <line id="XMLID_5_" class="menu__list__path menu__list__path2" x1="10.9" y1="15.5" x2="15.4"
+                      y2="15.5"></line>
+                <line id="XMLID_4_" class="menu__list__path menu__list__path2" x1="4.9" y1="17.7" x2="9.4"
+                      y2="17.7"></line>
+                <line id="XMLID_3_" class="menu__list__path menu__list__path2" x1="11.1" y1="17.7" x2="15.6"
+                      y2="17.7"></line>
+                <line id="XMLID_2_" class="menu__list__path menu__list__path2" x1="10.9" y1="13.2" x2="15.4"
+                      y2="13.2"></line>
+                <path id="XMLID_1_" class="menu__list__path menu__list__path2" d="M13.9,10.7h-1.6c-0.6,0-1.1-0.5-1.1-1.1V7.3c0-0.6,0.5-1.1,1.1-1.1h1.6c0.6,0,1.1,0.5,1.1,1.1
                           v2.4C15,10.3,14.5,10.7,13.9,10.7z"></path>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-223 25 512 512" xml:space="preserve"  width="44" height="75">
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="-223 25 512 512" xml:space="preserve"  width="44" height="75">
 
             <path class="menu__list__path menu__list__path4" d="M31,49c-83,0-150.5,66.1-150.5,147.4c0,72.7,51.5,167.9,94.7,235c2.8,4.3,8.6,5.6,13.1,2.9
                               c4.4-2.7,5.7-8.4,3-12.8c-75.8-117.8-91.8-187.5-91.8-225.1c0-71,59-128.8,131.6-128.8s131.6,57.8,131.6,128.8
@@ -298,412 +321,417 @@
                               c0,25.9-21.5,47-48,47s-48-21.1-48-47S4.6,149.4,31,149.4z" />
 
           </svg>
-        </a>
-      </li>
+            </a>
+        </li>
     </ul>
     <div class="menu__bottom">
-      <div class="menu__bottom__inner">
-        <p class="menu__bottom__inner__text">Блог</p>
-      </div>
-      <a href="#" target="blank" class="menu__bottom__link"></a>
+        <div class="menu__bottom__inner">
+            <p class="menu__bottom__inner__text">Блог</p>
+        </div>
+        <a href="#" target="blank" class="menu__bottom__link"></a>
     </div>
-  </div>
-  <!--end menu-->
-  <div class="wrapper">
+</div>
+<!--end menu-->
+<div class="wrapper">
     <!--beginning screen1-->
     <div class="screen screen1" id="screen1">
-      <div class="screen2__mini"></div>
-      <div class="screen1__indoor">
-        <div class="screen1__indoor__video">
-          <video id="video" autoplay="autoplay" loop="loop" muted="muted">
-            <source src="video/video-bg.mp4" type="video/mp4">
-            <!-- <source src="video/video-bg.webm" type="video/webm"> -->
-            </source>
-          </video>
+        <div class="screen2__mini"></div>
+        <div class="screen1__indoor">
+            <div class="screen1__indoor__video">
+                <video id="video" autoplay="autoplay" loop="loop" muted="muted">
+                    <source src="video/video-bg.mp4" type="video/mp4">
+                    <!-- <source src="video/video-bg.webm" type="video/webm"> -->
+                    </source>
+                </video>
+            </div>
+            <div class="screen1__indoor__mini">
+                <p class="screen1__indoor__title">Все стороны маркетинга</p>
+                <p class="screen1__indoor__info">Комплексные проекты:
+                    <br>консалтинг, дизайн,
+                    <br>продвижение</p>
+            </div>
         </div>
-        <div class="screen1__indoor__mini">
-          <p class="screen1__indoor__title">Все стороны маркетинга</p>
-          <p class="screen1__indoor__info">Комплексные проекты:
-            <br>консалтинг, дизайн,
-            <br>продвижение</p>
-        </div>
-      </div>
     </div>
     <!--end screen1-->
     <!--beginning screen2-->
     <div id="screen2" class="screen screen2">
-      <div class="screen2__mini"></div>
-      <div class="screen2__indoor">
-        <div class="case">
-          <div class="case__bg"></div>
-          <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini1/"></div>
-          <a href="http://mokselle-dev.ru/mini1/" class="to-site"></a>
-          <div class="screen2__indoor__mini screen2__indoor__mini1"></div>
-          <div class="screen2__indoor__border">
-            <div class="knowledge__border">
-              <div class="knowledge__border__left-top"></div>
-              <div class="knowledge__border__left"></div>
-              <div class="knowledge__border__right-top"></div>
-              <div class="knowledge__border__right"></div>
-              <div class="knowledge__border__right-bottom"></div>
+        <div class="screen2__mini"></div>
+        <div class="screen2__indoor">
+            <div class="case">
+                <div class="case__bg"></div>
+                <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini1/"></div>
+                <a href="http://mokselle-dev.ru/mini1/" class="to-site"></a>
+                <div class="screen2__indoor__mini screen2__indoor__mini1"></div>
+                <div class="screen2__indoor__border">
+                    <div class="knowledge__border">
+                        <div class="knowledge__border__left-top"></div>
+                        <div class="knowledge__border__left"></div>
+                        <div class="knowledge__border__right-top"></div>
+                        <div class="knowledge__border__right"></div>
+                        <div class="knowledge__border__right-bottom"></div>
+                    </div>
+                </div>
+                <div class="screen2__indoor__text">
+                    <p class="screen2__indoor__text__title">Сайт
+                        <br>для промо-акции
+                        <br>Tele2</p>
+                    <div class="screen2__indoor__text__info">
+                        <p>Посмотреть работу</p>
+                        <img src="img/arrow.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="screen2__indoor__text">
-            <p class="screen2__indoor__text__title">Сайт
-              <br>для промо-акции
-              <br>Tele2</p>
-            <div class="screen2__indoor__text__info">
-              <p>Посмотреть работу</p>
-              <img src="img/arrow.png" alt="">
+            <div class="case">
+                <div class="case__bg"></div>
+                <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini3/"></div>
+                <a href="http://mokselle-dev.ru/mini3/" class="to-site"></a>
+                <div class="screen2__indoor__mini screen2__indoor__mini2"></div>
+                <div class="screen2__indoor__border">
+                    <div class="knowledge__border">
+                        <div class="knowledge__border__left-top"></div>
+                        <div class="knowledge__border__left"></div>
+                        <div class="knowledge__border__right-top"></div>
+                        <div class="knowledge__border__right"></div>
+                        <div class="knowledge__border__right-bottom"></div>
+                    </div>
+                </div>
+                <div class="screen2__indoor__text">
+                    <p class="screen2__indoor__text__title">&laquo;Автолокатор&raquo;.
+                        <br>Комплексные
+                        <br>услуги
+                        <br>для продвижения
+                        <br>компании
+                        <br> и увеличения продаж</p>
+                    <div class="screen2__indoor__text__info">
+                        <p>Посмотреть работу</p>
+                        <img src="img/arrow.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="case">
-          <div class="case__bg"></div>
-          <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini3/"></div>
-          <a href="http://mokselle-dev.ru/mini3/" class="to-site"></a>
-          <div class="screen2__indoor__mini screen2__indoor__mini2"></div>
-          <div class="screen2__indoor__border">
-            <div class="knowledge__border">
-              <div class="knowledge__border__left-top"></div>
-              <div class="knowledge__border__left"></div>
-              <div class="knowledge__border__right-top"></div>
-              <div class="knowledge__border__right"></div>
-              <div class="knowledge__border__right-bottom"></div>
+            <div class="case">
+                <div class="case__bg"></div>
+                <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini2/"></div>
+                <a href="http://mokselle-dev.ru/mini2/" class="to-site"></a>
+                <div class="screen2__indoor__mini screen2__indoor__mini3"></div>
+                <div class="screen2__indoor__border">
+                    <div class="knowledge__border">
+                        <div class="knowledge__border__left-top"></div>
+                        <div class="knowledge__border__left"></div>
+                        <div class="knowledge__border__right-top"></div>
+                        <div class="knowledge__border__right"></div>
+                        <div class="knowledge__border__right-bottom"></div>
+                    </div>
+                </div>
+                <div class="screen2__indoor__text">
+                    <p class="screen2__indoor__text__title">Сайт
+                        <br>для автомобиля
+                        <br>Tesla X</p>
+                    <div class="screen2__indoor__text__info">
+                        <p>Посмотреть работу</p>
+                        <img src="img/arrow.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="screen2__indoor__text">
-            <p class="screen2__indoor__text__title">&laquo;Автолокатор&raquo;.
-              <br>Комплексные
-              <br>услуги
-              <br>для продвижения
-              <br>компании
-              <br> и увеличения продаж</p>
-            <div class="screen2__indoor__text__info">
-              <p>Посмотреть работу</p>
-              <img src="img/arrow.png" alt="">
+            <div class="case">
+                <div class="case__bg"></div>
+                <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini4/"></div>
+                <a href="http://mokselle-dev.ru/mini4/" class="to-site"></a>
+                <div class="screen2__indoor__mini screen2__indoor__mini4"></div>
+                <div class="screen2__indoor__border">
+                    <div class="knowledge__border">
+                        <div class="knowledge__border__left-top"></div>
+                        <div class="knowledge__border__left"></div>
+                        <div class="knowledge__border__right-top"></div>
+                        <div class="knowledge__border__right"></div>
+                        <div class="knowledge__border__right-bottom"></div>
+                    </div>
+                </div>
+                <div class="screen2__indoor__text">
+                    <p class="screen2__indoor__text__title screen2__indoor__text__title--color">Комплексное
+                        <br>продвижение
+                        <br>онлайн-мегамаркета
+                        <br>Ozon.ru</p>
+                    <div class="screen2__indoor__text__info">
+                        <p>Посмотреть работу</p>
+                        <img src="img/arrow.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="case">
-          <div class="case__bg"></div>
-          <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini2/"></div>
-          <a href="http://mokselle-dev.ru/mini2/" class="to-site"></a>
-          <div class="screen2__indoor__mini screen2__indoor__mini3"></div>
-          <div class="screen2__indoor__border">
-            <div class="knowledge__border">
-              <div class="knowledge__border__left-top"></div>
-              <div class="knowledge__border__left"></div>
-              <div class="knowledge__border__right-top"></div>
-              <div class="knowledge__border__right"></div>
-              <div class="knowledge__border__right-bottom"></div>
+            <div class="case">
+                <div class="case__bg"></div>
+                <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini5/"></div>
+                <a href="http://mokselle-dev.ru/mini5/" class="to-site"></a>
+                <div class="screen2__indoor__mini screen2__indoor__mini5"></div>
+                <div class="screen2__indoor__border">
+                    <div class="knowledge__border">
+                        <div class="knowledge__border__left-top"></div>
+                        <div class="knowledge__border__left"></div>
+                        <div class="knowledge__border__right-top"></div>
+                        <div class="knowledge__border__right"></div>
+                        <div class="knowledge__border__right-bottom"></div>
+                    </div>
+                </div>
+                <div class="screen2__indoor__text">
+                    <p class="screen2__indoor__text__title">Dortmax.
+                        <br>Вывод компании
+                        <br>на рынок Москвы </p>
+                    <div class="screen2__indoor__text__info">
+                        <p>Посмотреть работу</p>
+                        <img src="img/arrow.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="screen2__indoor__text">
-            <p class="screen2__indoor__text__title">Сайт
-              <br>для автомобиля
-              <br>Tesla X</p>
-            <div class="screen2__indoor__text__info">
-              <p>Посмотреть работу</p>
-              <img src="img/arrow.png" alt="">
+            <div class="case">
+                <div class="case__bg"></div>
+                <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini6/"></div>
+                <a href="http://mokselle-dev.ru/mini6/" class="to-site"></a>
+                <div class="screen2__indoor__mini screen2__indoor__mini6"></div>
+                <div class="screen2__indoor__border">
+                    <div class="knowledge__border">
+                        <div class="knowledge__border__left-top"></div>
+                        <div class="knowledge__border__left"></div>
+                        <div class="knowledge__border__right-top"></div>
+                        <div class="knowledge__border__right"></div>
+                        <div class="knowledge__border__right-bottom"></div>
+                    </div>
+                </div>
+                <div class="screen2__indoor__text">
+                    <p class="screen2__indoor__text__title">ГК «Инженерные
+                        <br>и строительные
+                        <br>системы».
+                        <br>Полная консалтинговая
+                        <br>поддержка бизнеса</p>
+                    <div class="screen2__indoor__text__info">
+                        <p>Посмотреть работу</p>
+                        <img src="img/arrow.png" alt="">
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="case">
-          <div class="case__bg"></div>
-          <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini4/"></div>
-          <a href="http://mokselle-dev.ru/mini4/" class="to-site"></a>
-          <div class="screen2__indoor__mini screen2__indoor__mini4"></div>
-          <div class="screen2__indoor__border">
-            <div class="knowledge__border">
-              <div class="knowledge__border__left-top"></div>
-              <div class="knowledge__border__left"></div>
-              <div class="knowledge__border__right-top"></div>
-              <div class="knowledge__border__right"></div>
-              <div class="knowledge__border__right-bottom"></div>
-            </div>
-          </div>
-          <div class="screen2__indoor__text">
-            <p class="screen2__indoor__text__title screen2__indoor__text__title--color">Комплексное
-              <br>продвижение
-              <br>онлайн-мегамаркета
-              <br>Ozon.ru</p>
-            <div class="screen2__indoor__text__info">
-              <p>Посмотреть работу</p>
-              <img src="img/arrow.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="case">
-          <div class="case__bg"></div>
-          <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini5/"></div>
-          <a href="http://mokselle-dev.ru/mini5/" class="to-site"></a>
-          <div class="screen2__indoor__mini screen2__indoor__mini5"></div>
-          <div class="screen2__indoor__border">
-            <div class="knowledge__border">
-              <div class="knowledge__border__left-top"></div>
-              <div class="knowledge__border__left"></div>
-              <div class="knowledge__border__right-top"></div>
-              <div class="knowledge__border__right"></div>
-              <div class="knowledge__border__right-bottom"></div>
-            </div>
-          </div>
-          <div class="screen2__indoor__text">
-            <p class="screen2__indoor__text__title">Dortmax.
-              <br>Вывод компании
-              <br>на рынок Москвы </p>
-            <div class="screen2__indoor__text__info">
-              <p>Посмотреть работу</p>
-              <img src="img/arrow.png" alt="">
-            </div>
-          </div>
-        </div>
-        <div class="case">
-          <div class="case__bg"></div>
-          <div class="for-iframe" data-email-id="http://mokselle-dev.ru/mini6/"></div>
-          <a href="http://mokselle-dev.ru/mini6/" class="to-site"></a>
-          <div class="screen2__indoor__mini screen2__indoor__mini6"></div>
-          <div class="screen2__indoor__border">
-            <div class="knowledge__border">
-              <div class="knowledge__border__left-top"></div>
-              <div class="knowledge__border__left"></div>
-              <div class="knowledge__border__right-top"></div>
-              <div class="knowledge__border__right"></div>
-              <div class="knowledge__border__right-bottom"></div>
-            </div>
-          </div>
-          <div class="screen2__indoor__text">
-            <p class="screen2__indoor__text__title">ГК «Инженерные
-              <br>и строительные
-              <br>системы».
-              <br>Полная консалтинговая
-              <br>поддержка бизнеса</p>
-            <div class="screen2__indoor__text__info">
-              <p>Посмотреть работу</p>
-              <img src="img/arrow.png" alt="">
-            </div>
-          </div>
-        </div>
-        <!--beginning big-->
-        <div class="big">
-          <!--<div class="big__back"></div>-->
-          <div class="big__content">
+            <!--beginning big-->
+            <div class="big">
+                <!--<div class="big__back"></div>-->
+                <div class="big__content">
 
-          </div>
-          <div class="menu__indoor__burger">
-            <button class="menu__handle"><span>Menu</span></button>
-          </div>
+                </div>
+                <div class="menu__indoor__burger">
+                    <button class="menu__handle"><span>Menu</span></button>
+                </div>
+            </div>
+            <!--end big-->
         </div>
-        <!--end big-->
-      </div>
     </div>
     <!--end screen2-->
     <div class="screen ">
-      <div class="alle_work-block">
-        <a href="#" onclick="popup('request','|Зарегистрироваться','Получить актуальный прайс','Введите адресс электронной почты  ','Отправить себе на почту');" class="alle_work">
-          <div><img src="img/pic_2.png" alt=""></div>
-          <div><span>Посмотреть весь прайс</span></div>
-          <div><img src="img/b-h.png" alt=""></div>
-        </a>
-      </div>
+        <div class="alle_work-block">
+            <a href="#"
+               onclick="popup('request','|Зарегистрироваться','Получить актуальный прайс','Введите адресс электронной почты  ','Отправить себе на почту');"
+               class="alle_work">
+                <div><img src="img/pic_2.png" alt=""></div>
+                <div><span>Посмотреть весь прайс</span></div>
+                <div><img src="img/b-h.png" alt=""></div>
+            </a>
+        </div>
     </div>
 
     <!--beginning screen-little-->
     <div class="screen screen-little">
-      <div class="screen-little__mini"></div>
-      <div class="screen-little__indoor">
+        <div class="screen-little__mini"></div>
+        <div class="screen-little__indoor">
 
-        <div class="screen-little__indoor__mini">
-          <div class="screen-little__indoor__mini__video"></div>
-          <!-- <p class="screen-little__indoor__mini__title">Только телефон и мы в деле</p> -->
-          <div class="screen-little__indoor__mini__right">
-            <div class="">
-              <p class="screen-little__indoor__mini__right__title">Оставьте номер, и мы обсудим все грани развития вашего бизнеса</p>
-              <form class="my-form">
-                <input type="hidden" name="name" value="true">
-                <input type="tel" name="phone" placeholder="Телефон" class="screen-little__indoor__mini__text phone required">
-                <div class="button screen-little__indoor__mini__button" data-name="callback" data-id="callback"></div>
-              </form>
+            <div class="screen-little__indoor__mini">
+                <div class="screen-little__indoor__mini__video"></div>
+                <!-- <p class="screen-little__indoor__mini__title">Только телефон и мы в деле</p> -->
+                <div class="screen-little__indoor__mini__right">
+                    <div class="">
+                        <p class="screen-little__indoor__mini__right__title">Оставьте номер, и мы обсудим все грани
+                            развития вашего бизнеса</p>
+                        <form class="my-form">
+                            <input type="hidden" name="name" value="true">
+                            <input type="tel" name="phone" placeholder="Телефон"
+                                   class="screen-little__indoor__mini__text phone required">
+                            <div class="button screen-little__indoor__mini__button" data-name="callback"
+                                 data-id="callback"></div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
-          </div>
-
         </div>
-      </div>
     </div>
     <!--end screen-little-->
     <!--beginning screen3-->
     <div class="screen screen3" id="screen3">
-      <div class="screen3__mini"></div>
-      <div class="screen3__max">
-        <div class="screen3__max__content">
-          <div>
-            <p class="screen3__max__content__title">Контакты</p>
-            <ul class="screen3__max__content__list">
-              <li>
-                <p class="screen3__max__content__list__title">НАШ ОФИС:</p>
-                <div class="screen3__max__content__list__info">
-                  <img src="img/ic.jpg" alt="">
-                  <p>ул. Седова, д. 11 лит. А</p>
-                </div>
-              </li>
-              <li>
-                <p class="screen3__max__content__list__title">КАК С НАМИ СВЯЗАТЬСЯ:</p>
-                <div class="screen3__max__content__list__info">
-                  <img src="img/ic2.jpg" alt="">
-                  <p>+7 921 341-41-84</p>
-                </div>
-              </li>
-            </ul>
-            <ul class="screen3__max__content__list">
-              <li>
-                <p class="screen3__max__content__list__title">E-MAIL РАССЫЛКА</p>
-                <p class="screen3__max__content__list__info2">Опыт, идеи, новости, обратная связь</p>
-                <div class="screen3__max__content__list__form">
-                  <form class="my-form">
-                    <input type="hidden" name="name" value="true">
-                    <input type="tel" name="phone" placeholder="Телефон" class="screen3__max__content__list__form__input  phone required">
-                    <div class="button screen-little__indoor__mini__button" style="background-color: #FF6019;border: 1px solid #FF6019;" data-name="callback" data-id="callback"></div>
-                  </form>
+        <div class="screen3__mini"></div>
+        <div class="screen3__max">
+            <div class="screen3__max__content">
+                <div>
+                    <p class="screen3__max__content__title">Контакты</p>
+                    <ul class="screen3__max__content__list">
+                        <li>
+                            <p class="screen3__max__content__list__title">НАШ ОФИС:</p>
+                            <div class="screen3__max__content__list__info">
+                                <img src="img/ic.jpg" alt="">
+                                <p>ул. Седова, д. 11 лит. А</p>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="screen3__max__content__list__title">КАК С НАМИ СВЯЗАТЬСЯ:</p>
+                            <div class="screen3__max__content__list__info">
+                                <img src="img/ic2.jpg" alt="">
+                                <p>+7 921 341-41-84</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="screen3__max__content__list">
+                        <li>
+                            <p class="screen3__max__content__list__title">E-MAIL РАССЫЛКА</p>
+                            <p class="screen3__max__content__list__info2">Опыт, идеи, новости, обратная связь</p>
+                            <div class="screen3__max__content__list__form">
+                                <form class="my-form">
+                                    <input type="hidden" name="name" value="true">
+                                    <input type="tel" name="phone" placeholder="Телефон"
+                                           class="screen3__max__content__list__form__input  phone required">
+                                    <div class="button screen-little__indoor__mini__button"
+                                         style="background-color: #FF6019;border: 1px solid #FF6019;"
+                                         data-name="callback" data-id="callback"></div>
+                                </form>
 
+                            </div>
+                        </li>
+                        <li>
+                            <p class="screen3__max__content__list__title">СОЦИАЛЬНЫЕ СЕТИ</p>
+                            <ul class="screen3__max__content__list__list">
+                                <li>
+                                    <a href="https://www.facebook.com/mokselle.live" target="blank">
+                                        <img src="img/soc1.jpg" alt="">
+                                        <img src="img/soc1h.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://vk.com/moksellegroup" target="blank">
+                                        <img src="img/soc2.jpg" alt="">
+                                        <img src="img/soc2h.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/user/krutovdv" target="blank">
+                                        <img src="img/soc3.jpg" alt="">
+                                        <img src="img/soc3h.jpg" alt="">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/mokselle/" target="blank">
+                                        <img src="img/soc4.jpg" alt="">
+                                        <img src="img/soc4h.jpg" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="general-button"
+                         onclick="popup('request','|Зарегистрироваться','Получить актуальный прайс','Введите адресс электронной почты  ','Отправить себе на почту');">
+                        Пообщаться с менеджером
+                    </div>
                 </div>
-              </li>
-              <li>
-                <p class="screen3__max__content__list__title">СОЦИАЛЬНЫЕ СЕТИ</p>
-                <ul class="screen3__max__content__list__list">
-                  <li>
-                    <a href="https://www.facebook.com/mokselle.live" target="blank">
-                      <img src="img/soc1.jpg" alt="">
-                      <img src="img/soc1h.jpg" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://vk.com/moksellegroup" target="blank">
-                      <img src="img/soc2.jpg" alt="">
-                      <img src="img/soc2h.jpg" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.youtube.com/user/krutovdv" target="blank">
-                      <img src="img/soc3.jpg" alt="">
-                      <img src="img/soc3h.jpg" alt="">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/mokselle/" target="blank">
-                      <img src="img/soc4.jpg" alt="">
-                      <img src="img/soc4h.jpg" alt="">
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <div class="general-button" onclick="popup('request','|Зарегистрироваться','Получить актуальный прайс','Введите адресс электронной почты  ','Отправить себе на почту');">Пообщаться с менеджером</div>
-          </div>
+            </div>
+            <div class="screen3__max__map">
+                <div class="screen3__max__map__bg"></div>
+                <div class="map2" id="map-canvas"></div>
+            </div>
         </div>
-        <div class="screen3__max__map">
-          <div class="screen3__max__map__bg"></div>
-          <div class="map2" id="map-canvas"></div>
-        </div>
-      </div>
     </div>
     <!--end screen3-->
 
-  </div>
+</div>
 
 
-
-
-
-
-
-
-
-
-  <div class="popup_overlay" onclick="popup_out();"></div>
-  <div class="popup" id="thx">
+<div class="popup_overlay" onclick="popup_out();"></div>
+<div class="popup" id="thx">
     <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
     <div class="popup_h1">Спасибо за заявку</div>
     <div class="popup_h2">Наш менеджер перезвонит вам в ближайшее время</div>
     <div class="btn" onclick="popup_out();">закрыть</div>
-  </div>
-  <div class="popup" id="callback">
+</div>
+<div class="popup" id="callback">
     <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
     <div class="popup_h1">Заказать обратный звонок</div>
     <div class="popup_h2">
-      Оставьте заявку, и наш специалист свяжется
-      <br> с вами, чтобы ответить на ваши вопросы.
+        Оставьте заявку, и наш специалист свяжется
+        <br> с вами, чтобы ответить на ваши вопросы.
     </div>
     <form>
-      <div class="desc"></div>
-      <label class="name required">
-        <input type="text" name="name" placeholder="Ваше имя">
-      </label>
-      <br>
-      <div class="desc"></div>
-      <label class="phone required">
-        <input type="text" name="phone" placeholder="Ваш телефон">
-      </label>
-      <br>
-      <div data-name="callback" class="button noselect btn">Заказать звонок</div>
+        <div class="desc"></div>
+        <label class="name required">
+            <input type="text" name="name" placeholder="Ваше имя">
+        </label>
+        <br>
+        <div class="desc"></div>
+        <label class="phone required">
+            <input type="text" name="phone" placeholder="Ваш телефон">
+        </label>
+        <br>
+        <div data-name="callback" class="button noselect btn">Заказать звонок</div>
     </form>
-  </div>
-  <div class="popup" id="request">
+</div>
+<div class="popup" id="request">
     <div class="popup__indoor">
-      <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
-      <div class="popup_h1">Оставьте заявку</div>
-      <div class="popup_h2">
-        Оставьте заявку, и наш специалист свяжется
-        <br> с вами в ближайшее время.
-      </div>
-      <form>
-        <div class="">
-          <label class="name required">
-            <input type="email" name="name" placeholder="Введите e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-          </label>
+        <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
+        <div class="popup_h1">Оставьте заявку</div>
+        <div class="popup_h2">
+            Оставьте заявку, и наш специалист свяжется
+            <br> с вами в ближайшее время.
         </div>
-        <div data-name="request" class="button noselect btn">Заказать</div>
-      </form>
+        <form>
+            <div class="">
+                <label class="name required">
+                    <input type="email" name="name" placeholder="Введите e-mail"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                </label>
+            </div>
+            <div data-name="request" class="button noselect btn">Заказать</div>
+        </form>
     </div>
-  </div>
-  <div class="popup" id="question">
+</div>
+<div class="popup" id="question">
     <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
     <div class="popup_h1">Задать вопрос</div>
     <div class="popup_h2">
-      Заполните форму,
-      <br> и&nbsp;мы&nbsp;обязательно свяжемся с&nbsp;вами!
+        Заполните форму,
+        <br> и&nbsp;мы&nbsp;обязательно свяжемся с&nbsp;вами!
     </div>
     <form>
-      <div class="desc"></div>
-      <label class="name required">
-        <input type="text" name="name" placeholder="Ваше имя">
-      </label>
-      <br>
-      <div class="desc"></div>
-      <label class="phone required">
-        <input type="text" name="phone" placeholder="Ваш телефон">
-      </label>
-      <br>
-      <div class="desc"></div>
-      <label class="email required">
-        <input type="text" name="email" placeholder="Ваш E-mail">
-      </label>
-      <br>
-      <div class="desc">Ваш вопрос</div>
-      <textarea class="ques" name="ques" placeholder="Ваш вопрос"></textarea>
-      <br>
-      <div data-name="question" class="button noselect btn">Задать вопрос</div>
+        <div class="desc"></div>
+        <label class="name required">
+            <input type="text" name="name" placeholder="Ваше имя">
+        </label>
+        <br>
+        <div class="desc"></div>
+        <label class="phone required">
+            <input type="text" name="phone" placeholder="Ваш телефон">
+        </label>
+        <br>
+        <div class="desc"></div>
+        <label class="email required">
+            <input type="text" name="email" placeholder="Ваш E-mail">
+        </label>
+        <br>
+        <div class="desc">Ваш вопрос</div>
+        <textarea class="ques" name="ques" placeholder="Ваш вопрос"></textarea>
+        <br>
+        <div data-name="question" class="button noselect btn">Задать вопрос</div>
     </form>
-  </div>
+</div>
 
-  <input type="hidden" name="prefix" class="prefix" value="">
-  <input type="hidden" name="phone_format" class="phone_format" value="one">
-  <input type="hidden" name="referer" value="">
-  <input type="hidden" name="ref_url" value="">
-  <input type="hidden" class="formname" name="formname" value="">
-  <input type="hidden" class="sitename" name="sitename" value="mokselle.ru">
-  <input type="hidden" class="emailsarr" name="emailsarr" value="mokselleweb@yandex.ru|mokselle.partners@gmail.com|amijin2015@gmail.com|iskusnov@mokselle.ru">
+<input type="hidden" name="prefix" class="prefix" value="">
+<input type="hidden" name="phone_format" class="phone_format" value="one">
+<input type="hidden" name="referer" value="">
+<input type="hidden" name="ref_url" value="">
+<input type="hidden" class="formname" name="formname" value="">
+<input type="hidden" class="sitename" name="sitename" value="mokselle.ru">
+<input type="hidden" class="emailsarr" name="emailsarr"
+       value="mokselleweb@yandex.ru|mokselle.partners@gmail.com|amijin2015@gmail.com|iskusnov@mokselle.ru">
 
-  <script type="text/javascript" src="js/plugins.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
 </body>
 
 </html>
