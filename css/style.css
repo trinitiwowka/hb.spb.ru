@@ -910,6 +910,7 @@ body.itsie .bg.active .bg__logo{
 
 .screen3__max__content > div {
     width: 95%;
+    height: 100%;
 }
 
 .screen3__max__content__title{
