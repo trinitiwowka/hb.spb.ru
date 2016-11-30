@@ -106,7 +106,20 @@ $(document).ready(function() {
 				formname = '|email рассылка';
 				submit = 'email delivery';
 			}
-			thx();
+
+			// if($(this).data('id')=='price'){
+			// 	thxPrice();
+			// } else {
+			// 	thx();
+			// }
+
+			if($(this).data('name')=='price') {
+				thx2();
+			} else {
+				thx();
+			}
+
+			// thx();
 			console.log("TEST name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr);
 			$.ajax({
 				type: "POST",
@@ -125,6 +138,9 @@ $(document).ready(function() {
 			});
 		}
 	});
+
+
+
 
 	/* Youtube fix */
 	$("iframe").each(function() {
@@ -208,6 +224,7 @@ function thx() {
 	$('.popup').hide();
 	$('.popup').removeClass('activePopup');
 	popup('thx', '');
+
 	if(phone_format == 'one') {
 		$('input[type="text"]').each(function(){
 			$(this).val('');
@@ -218,6 +235,12 @@ function thx() {
 		});
 	}
 	$('textarea').val('');
+}
+
+function thx2() {
+	$('.popup').hide();
+	$('.popup').removeClass('activePopup');
+	popup('thx-price', '');
 }
 
 function checkForm(form1) {
