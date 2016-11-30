@@ -116,8 +116,8 @@ $(document).ready(function() {
 			console.log("TEST name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr);
 			$.ajax({
 				type: "POST",
-				url: url,
-				dataType: "json",
+				url: "send.php",
+				// dataType: "json",
 				data: "name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr,
 				success: function (data) {
 					console.log(data);

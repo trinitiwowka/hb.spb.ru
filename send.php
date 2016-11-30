@@ -1,11 +1,6 @@
-
-
 <?
 
-  
-  
-  
-  $headers= "MIME-Version: 1.0\r\n";
+$headers= "MIME-Version: 1.0\r\n";
 $headers .= "Content-type: text/html; charset=utf-8 \r\n";
 $headers .= "From: <info@mydefend.pro>\r\n";
   mail ("shafigalov@gmail.com",
@@ -14,8 +9,9 @@ $headers .= "From: <info@mydefend.pro>\r\n";
         "<br>Имя: ".$_POST['name'].
 		"<br>Телефон: ".$_POST['phone'], $headers); 
 
-  
-?>
+ ?>
+
+
 
 
 
