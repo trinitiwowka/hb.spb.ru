@@ -668,32 +668,32 @@ body.itsie .bg.active .bg__logo{
 }
 
 .screen2__indoor__mini1{
-    background: url(../img/cm1.jpg) no-repeat center;
+    background: url(../img/futbolka.png) no-repeat center;
     background-size: cover;
 }
 
 .screen2__indoor__mini2{
-    background: url(../img/cm2.jpg) no-repeat center;
+    background: url(../img/futbolka.png) no-repeat center;
     background-size: cover;
 }
 
 .screen2__indoor__mini3{
-    background: url(../img/cm4.jpg) no-repeat center;
+    background: url(../img/futbolka.png) no-repeat center;
     background-size: cover;
 }
 
 .screen2__indoor__mini4{
-    background: url(../img/cm3.jpg) no-repeat center;
+    background: url(../img/futbolka.png) no-repeat center;
     background-size: cover;
 }
 
 .screen2__indoor__mini5{
-    background: url(../img/cm5.jpg) no-repeat center;
+    background: url(../img/futbolka.png) no-repeat center;
     background-size: cover;
 }
 
 .screen2__indoor__mini6{
-    background: url(../img/cm6.jpg) no-repeat center;
+    background: url(../img/futbolka.png) no-repeat center;
     background-size: cover;
 }
 
@@ -750,7 +750,7 @@ body.itsie .bg.active .bg__logo{
     position: absolute;
     top: 0px;
     left: 0%;
-    background: #FF6019;
+    background: #3C88C6;
     transition: 0.2s ease 0.6s;
 }
 .case:hover .knowledge__border__right-top{
@@ -764,7 +764,7 @@ body.itsie .bg.active .bg__logo{
     position: absolute;
     top: 0px;
     right: 0px;
-    background: #FF6019;
+    background: #3C88C6;
     transition: 0.2s ease 0.4s
 }
 
@@ -779,7 +779,7 @@ body.itsie .bg.active .bg__logo{
     position: absolute;
     bottom: 0px;
     right: 0px;
-    background: #FF6019;
+    background: #3C88C6;
     transition: 0.2s ease 0.2s
 }
 
@@ -794,7 +794,7 @@ body.itsie .bg.active .bg__logo{
     position: absolute;
     bottom: 0px;
     left: 0px;
-    background: #FF6019;
+    background: #3C88C6;
     transition: 0.2s ease 0s
 }
 
@@ -802,34 +802,6 @@ body.itsie .bg.active .bg__logo{
     height: 100%;
     transition: 0.2s ease 0.6s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .screen2__indoor__text{
     position: relative;
@@ -841,13 +813,13 @@ body.itsie .bg.active .bg__logo{
 .screen2__indoor__text__title{
     font-family: "gothamprobold";
     font-size: 35px;
-    color: #fff;
+    color: #171d20;
     line-height: 35px;
 }
 
-.screen2__indoor__text__title--color{
-    color: #FFF;
-}
+/*.screen2__indoor__text__title--color{*/
+    /*color: #FFF;*/
+/*}*/
 
 .screen2__indoor__text__info {
     font-size: 0;
