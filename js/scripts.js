@@ -107,19 +107,12 @@ $(document).ready(function() {
 				submit = 'email delivery';
 			}
 
-			// if($(this).data('id')=='price'){
-			// 	thxPrice();
-			// } else {
-			// 	thx();
-			// }
-
 			if($(this).data('name')=='price') {
-				thx2();
+				thxPrice();
 			} else {
 				thx();
 			}
 
-			// thx();
 			console.log("TEST name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr);
 			$.ajax({
 				type: "POST",
@@ -237,7 +230,7 @@ function thx() {
 	$('textarea').val('');
 }
 
-function thx2() {
+function thxPrice() {
 	$('.popup').hide();
 	$('.popup').removeClass('activePopup');
 	popup('thx-price', '');
