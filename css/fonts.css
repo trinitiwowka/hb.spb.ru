@@ -1,0 +1,84 @@
+﻿
+/*beginning fonts*/
+@font-face {
+  font-family: 'gothampro-light';
+  src: url('../fonts/gothampro-light.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothampro-light';
+  src:  url('../fonts/gothampro-light.otf')  format('opentype'),
+        url('../fonts/gothampro-light.ttf')  format('truetype'), 
+        url('../fonts/gothamPro-light.svg#gothampro-light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothampro';
+  src: url('../fonts/gothampro.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothampro';
+  src:  url('../fonts/gothampro.otf')  format('opentype'),
+        url('../fonts/gothampro.ttf')  format('truetype'), 
+        url('../fonts/gothampro.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "gothampromedium";
+    src: url("../fonts/gothampromedium.eot");
+    src: url("../fonts/gothampromedium.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/gothampromedium.woff") format("woff"),
+    url("../fonts/gothampromedium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "gothamprobold";
+    src: url("../fonts/gothamprobold.eot");
+    src: url("../fonts/gothamprobold.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/gothamprobold.woff") format("woff"),
+    url("../fonts/gothamprobold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+  font-family: 'ptserif-regular';
+  src: url('../fonts/ptserif-regular.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ptserif-regular';
+  src:  url('../fonts/ptserif-regular.ttf')  format('truetype'), 
+  url('../fonts/ptserif-regular.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothampro-black';
+  src: url('../fonts/gothampro-black.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gothampro-black';
+  src:  url('../fonts/gothampro-black.otf')  format('opentype'), url('../fonts/gothampro-black.ttf')  format('truetype'), 
+  url('../fonts/gothampro-black.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*end fonts*/
