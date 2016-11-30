@@ -453,7 +453,6 @@ body.itsie .bg.active .bg__logo{
     stroke-dasharray: 2200;
     stroke-dashoffset: 2200;
     stroke-width: 15px;
-    stroke:#FFF;
 }
 .menu.active .menu__list__path5{
     transition: stroke-dashoffset 2s ease 4.5s;
