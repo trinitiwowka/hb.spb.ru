@@ -615,6 +615,7 @@ body.itsie .bg.active .bg__logo{
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    margin: 1px;
 }
 
 .for-iframe{
