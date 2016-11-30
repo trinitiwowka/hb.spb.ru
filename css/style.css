@@ -1160,6 +1160,7 @@ body.itsie .bg.active .bg__logo{
     left: 0px;
     background: url(../img/m-bg.jpg) no-repeat;
     background-size: cover;
+    background-position-y: initial;
 }
 /*end screen3*/
 /*beginning big*/

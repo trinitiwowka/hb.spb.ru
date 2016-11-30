@@ -328,7 +328,8 @@
 .screen3__max__map {
     flex: 1 1 100%;
     -webkit-flex: 1 1 100%;
-    height: 50%;
+    height: 100%;
+    margin-top: 20%;
 }
 
 .screen3__max__content {
@@ -410,7 +411,7 @@
 }
 
 .screen3__max__map__bg {
-    background: url(../img/m-bg.jpg) no-repeat 0px -140px;
+    background: url(../img/m-bg.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -499,7 +500,7 @@
 }
 
 .screen3__max__map__bg {
-    background: url(../img/m-bg.jpg) no-repeat 0px -100px;
+    background: url(../img/m-bg.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -618,7 +619,7 @@
 }
 
 .screen3__max__map__bg {
-    background: url(../img/m-bg.jpg) no-repeat 0px -11px;
+    background: url(../img/m-bg.jpg) no-repeat;
     background-size: cover;
 }
 
