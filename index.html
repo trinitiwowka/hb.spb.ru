@@ -19,7 +19,7 @@
     <script type="text/javascript">
         /***********************************************************************************************/
         var map;
-        var chicago = new google.maps.LatLng(59.899472, 30.4010128);
+        var chicago = new google.maps.LatLng(59.899995, 30.400879);
 
         function initialize() {
 
@@ -145,8 +145,8 @@
 
             map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
-            var marker1 = new google.maps.LatLng(59.899472, 30.4010128);
-            var image = 'img/location.png';
+            var marker1 = new google.maps.LatLng(59.899995, 30.400879);
+            var image = 'img/location2.png';
             var beachMarker = new google.maps.Marker({
                 position: marker1,
                 map: map,
@@ -596,8 +596,7 @@
                                     <input type="hidden" name="name" value="true">
                                     <input type="tel" name="phone" placeholder="Телефон"
                                            class="screen3__max__content__list__form__input  phone required">
-                                    <div class="button screen-little__indoor__mini__button"
-                                         style="background-color: #FF6019;border: 1px solid #FF6019;"
+                                    <div class="button screen-little__indoor__mini__button button_phone"
                                          data-name="callback" data-id="callback"></div>
                                 </form>
 
@@ -657,6 +656,13 @@
     <div class="popup_h2">Наш менеджер перезвонит вам в ближайшее время</div>
     <div class="btn" onclick="popup_out();">закрыть</div>
 </div>
+
+<div class="popup" id="thx-price">
+    <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
+    <div class="popup_h1">Спасибо!</div>
+    <div class="btn" onclick="popup_out();">закрыть</div>
+</div>
+
 <div class="popup" id="callback">
     <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
     <div class="popup_h1">Заказать обратный звонок</div>
@@ -716,7 +722,7 @@
                     <input type="email" name="name" placeholder="Введите Ваш e-mail">
                 </label>
             </div>
-            <div data-name="request" class="button noselect btn">Заказать</div>
+            <div data-name="price" class="button noselect btn">Заказать</div>
         </form>
     </div>
 </div>
