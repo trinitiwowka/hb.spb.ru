@@ -535,7 +535,7 @@ body.itsie .bg.active .bg__logo{
     position: absolute;
     top: 0px;
     left: 0px;
-    background: #000;
+    /*background: #000;*/
     overflow: hidden;
 }
 
