@@ -8,9 +8,6 @@
 
   $picture = $path;
 
-  $filename = "file.docx";  
-
-
   $thm = "тема письма";
 
   $msg = "Текст сообщения";
