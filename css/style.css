@@ -1780,4 +1780,41 @@ iframe{
     padding-top: 1px;
     position: absolute;
 }
+
+.tabs__control {
+    margin-top: 20px;
+}
+
+.tabs__control-link {
+    display: block;
+    padding: 16px 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.tabs__controls-item {
+    display: inline-block;
+    width: 49%;
+    font-family: 'gothampro';
+    font-size: 16px;
+    text-align: center;
+    color: #FF6019;
+    background: #fff;
+    border: 1px solid #FF6019;
+    transition: background 0.3s ease 0s, color 0.3s ease 0s, transform 0.1s ease 0s;}
+
+.tabs__controls-item:hover {
+    color: #fff;
+    background: #FF6019;
+}
+
+.tabs__controls-item.active {
+    color: #fff;
+    background: #FF6019;
+}
+
+.tabs__item {
+    display: none; }
+.tabs__item.active {
+    display: block; }
 /*end animation*/

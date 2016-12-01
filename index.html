@@ -529,7 +529,7 @@
     <div class="screen ">
         <div class="alle_work-block">
             <a href="#"
-               onclick="popup('price','|Получить актуальный прайс','Получить актуальный прайс','Введите адрес электронной почты  ','Отправить себе на почту');"
+               onclick="popup('price','|Получить актуальный прайс','Получить актуальный прайс','','');"
                class="alle_work" id="buttonPrice">
                 <div><img src="img/pic_2.png" alt=""></div>
                 <div><span>Посмотреть весь прайс</span></div>
@@ -712,18 +712,46 @@
     <div class="popup__indoor">
         <div class="popup_close noselect" onclick="popup_out();"><span>&nbsp;</span></div>
         <div class="popup_h1">Оставьте заявку</div>
-        <div class="popup_h2">
-            Оставьте заявку, и наш специалист свяжется
-            <br> с вами в ближайшее время.
+
+        <div class="tabs">
+            <ul class="tabs__control">
+                <li class="tabs__controls-item active">
+                    <a href="" class="tabs__control-link">На e-mail</a>
+                </li>
+
+                <li class="tabs__controls-item">
+                    <a href="" class="tabs__control-link">На телефон</a>
+                </li>
+            </ul>
+
+            <ul class="tabs__list">
+                <li class="tabs__item active">
+                    <form enctype='multipart/form-data'>
+                        <div class="">
+                            <div class="popup_h2">Введите адрес электронной почты</div>
+                            <label class="email required">
+                                <input type="email" name="email" placeholder="Введите Ваш e-mail">
+                            </label>
+                        </div>
+                        <div data-name="price" class="button noselect btn">Отправить себе на почту</div>
+                    </form>
+                </li>
+
+                <li class="tabs__item">
+                    <form enctype='multipart/form-data'>
+                        <div class="">
+                            <div class="popup_h2">Введите адрес номер телефона</div>
+                            <label class="phone required">
+                                <input type="text" name="phone" placeholder="Введите Ваш телефон">
+                            </label>
+                        </div>
+                        <div data-name="price-phone" class="button noselect btn">Получить СМС</div>
+                    </form>
+                </li>
+
+            </ul>
         </div>
-        <form enctype='multipart/form-data'>
-            <div class="">
-                <label class="email required">
-                    <input type="email" name="email" placeholder="Введите Ваш e-mail">
-                </label>
-            </div>
-            <div data-name="price" class="button noselect btn">Заказать</div>
-        </form>
+
     </div>
 </div>
 
