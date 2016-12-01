@@ -108,27 +108,51 @@ $(document).ready(function() {
 			}
 
 			if($(this).data('name')=='price') {
+
+				$.ajax({
+					type: "POST",
+					url: "mail.php",
+					// dataType: "json",
+					data: sbt+"="+submit+"&email="+email+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr,
+					success: function (data) {
+						console.log(data);
+
+					}
+				});
+
 				thxPrice();
 			} else {
+
+				$.ajax({
+					type: "POST",
+					url: "send.php",
+					// dataType: "json",
+					data: "name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr,
+					success: function (data) {
+						console.log(data);
+
+					}
+				});
+
 				thx();
 			}
-
-			console.log("TEST name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr);
-			$.ajax({
-				type: "POST",
-				url: "send.php",
-				// dataType: "json",
-				data: "name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr,
-				success: function (data) {
-					console.log(data);
-					
-				}
-			}).always(function() {
-				//thx();
-				//метрики
-				//setTimeout(function(){ga('send', 'event', ''+sbt, ''+sbt);}, 30);
-				//setTimeout(function(){yaCounterXXXXXXXXX.reachGoal(''+sbt);}, 30); // меняем XXXXXXXXX на номер счетчика
-			});
+            //
+			// console.log("TEST name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr);
+			// $.ajax({
+			// 	type: "POST",
+			// 	url: "send.php",
+			// 	// dataType: "json",
+			// 	data: "name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr,
+			// 	success: function (data) {
+			// 		console.log(data);
+			//
+			// 	}
+			// }).always(function() {
+			// 	//thx();
+			// 	//метрики
+			// 	//setTimeout(function(){ga('send', 'event', ''+sbt, ''+sbt);}, 30);
+			// 	//setTimeout(function(){yaCounterXXXXXXXXX.reachGoal(''+sbt);}, 30); // меняем XXXXXXXXX на номер счетчика
+			// });
 		}
 	});
 
