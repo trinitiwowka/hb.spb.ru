@@ -1,61 +1,107 @@
 <?php
 
-$to  = "<mail@example.com>" ;
+  // проверяем правильности заполнения с помощью регулярного выражения
 
-$subject = "тема письма";
+  $_POST['mail_to'] = htmlspecialchars(stripslashes($_POST['mail_to']));
 
-$message ="Текст сообщения";
-// текст сообщения, здесь вы можете вставлять таблицы, рисунки, заголовки, оформление цветом и т.п.
+  $_POST['mail_subject'] = htmlspecialchars(stripslashes($_POST['mail_subject']));
 
-$filename = "file.doc";
-// название файла
+  $_POST['mail_msg'] = htmlspecialchars(stripslashes($_POST['mail_msg']));
 
-$filepath = "files/file.doc";
-// месторасположение файла
+  $picture = "";
 
-//исьмо с вложением состоит из нескольких частей, которые разделяются разделителем
+  // Если поле выбора вложения не пустое - закачиваем его на сервер
 
-$boundary = "--".md5(uniqid(time()));
-// генерируем разделитель
+  if (!empty($_FILES['mail_file']['tmp_name']))
 
-$mailheaders = "MIME-Version: 1.0;\r\n";
-$mailheaders .="Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
-// разделитель указывается в заголовке в параметре boundary
+  {
 
-$mailheaders .= "From: $user_email <$user_email>\r\n";
-$mailheaders .= "Reply-To: $user_email\r\n";
+    // Закачиваем файл
 
-$multipart = "--$boundary\r\n";
-$multipart .= "Content-Type: text/html; charset=windows-1251\r\n";
-$multipart .= "Content-Transfer-Encoding: base64\r\n";
-$multipart .= \r\n;
-$multipart .= chunk_split(base64_encode(iconv("utf8", "windows-1251", $message)));
-// первая часть само сообщение
+    $path = $_FILES['mail_file']['index.html'];
 
-// Закачиваем файл
-	$fp = fopen($filepath,"r");
-		if (!$fp)
-		{
-			print "Не удается открыть файл22";
-			exit();
-		}
-$file = fread($fp, filesize($filepath));
-fclose($fp);
-// чтение файла
+    if (copy($_FILES['mail_file']['tmp_name'], $path)) $picture = $path;
+
+  }
+
+  $thm = "theme";
+
+  $msg = "сообщение";
+
+  $mail_to = "trinitiwowka@gmail.com";
+
+  // Отправляем почтовое сообщение
+
+  if(empty($picture)) mail($mail_to, $thm, $msg);
+
+  else send_mail($mail_to, $thm, $msg, $picture);
+
+  // Вспомогательная функция для отправки почтового сообщения с вложением
+
+  function send_mail($to, $thm, $html, $path)
+
+  {
+
+    $fp = fopen($path,"r");
+
+    if (!$fp)
+
+    {
+
+      print "Файл $path не может быть прочитан";
+
+      exit();
+
+    }
+
+    $file = fread($fp, filesize($path));
+
+    fclose($fp);
 
 
-$message_part = "\r\n--$boundary\r\n";
-$message_part .= "Content-Type: application/octet-stream; name=\"$filename\"\r\n";
-$message_part .= "Content-Transfer-Encoding: base64\r\n";
-$message_part .= "Content-Disposition: attachment; filename=\"$filename\"\r\n";
-$message_part .= \r\n;
-$message_part .= chunk_split(base64_encode($file));
-$message_part .= "\r\n--$boundary--\r\n";
-// второй частью прикрепляем файл, можно прикрепить два и более файла
 
-$multipart .= $message_part;
+    $boundary = "--".md5(uniqid(time())); // генерируем разделитель
 
-mail($to,$subject,$multipart,$mailheaders);
-// отправляем письмо
+    $headers .= "MIME-Version: 1.0\n";
+
+    $headers .="Content-Type: multipart/mixed; boundary=\"$boundary\"\n";
+
+    $multipart .= "--$boundary\n";
+
+    $kod = 'koi8-r'; // или $kod = 'windows-1251';
+
+    $multipart .= "Content-Type: text/html; charset=$kod\n";
+
+    $multipart .= "Content-Transfer-Encoding: Quot-Printed\n\n";
+
+    $multipart .= "$html\n\n";
+
+
+
+    $message_part = "--$boundary\n";
+
+    $message_part .= "Content-Type: application/octet-stream\n";
+
+    $message_part .= "Content-Transfer-Encoding: base64\n";
+
+    $message_part .= "Content-Disposition: attachment; filename = \"".$path."\"\n\n";
+
+    $message_part .= chunk_split(base64_encode($file))."\n";
+
+    $multipart .= $message_part."--$boundary--\n";
+
+
+
+    if(!mail($to, $thm, $multipart, $headers))
+
+    {
+
+      echo "К сожалению, письмо не отправлено";
+
+      exit();
+
+    }
+
+  }
 
 ?>
