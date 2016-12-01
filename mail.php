@@ -1,107 +1,65 @@
 <?php
 
-  // проверяем правильности заполнения с помощью регулярного выражения
+$to  = "<kashirin1242@gmail.com>";
 
-  $_POST['mail_to'] = htmlspecialchars(stripslashes($_POST['mail_to']));
+$subject = "тема письма";
 
-  $_POST['mail_subject'] = htmlspecialchars(stripslashes($_POST['mail_subject']));
+$message ="Текст сообщения"; 
+// текст сообщения, здесь вы можете вставлять таблицы, рисунки, заголовки, оформление цветом и т.п.
 
-  $_POST['mail_msg'] = htmlspecialchars(stripslashes($_POST['mail_msg']));
+$filename = "file.docx";
+// название файла
 
-  $picture = "";
-
-  // Если поле выбора вложения не пустое - закачиваем его на сервер
-
-  if (!empty($_FILES['mail_file']['tmp_name']))
-
-  {
-
-    // Закачиваем файл
-
-    $path = $_FILES['mail_file']['index.html'];
-
-    if (copy($_FILES['mail_file']['tmp_name'], $path)) $picture = $path;
-
-  }
-
-  $thm = "theme";
-
-  $msg = "сообщение";
-
-  $mail_to = "trinitiwowka@gmail.com";
-
-  // Отправляем почтовое сообщение
-
-  if(empty($picture)) mail($mail_to, $thm, $msg);
-
-  else send_mail($mail_to, $thm, $msg, $picture);
-
-  // Вспомогательная функция для отправки почтового сообщения с вложением
-
-  function send_mail($to, $thm, $html, $path)
-
-  {
-
-    $fp = fopen($path,"r");
-
-    if (!$fp)
-
-    {
-
-      print "Файл $path не может быть прочитан";
-
-      exit();
-
-    }
-
-    $file = fread($fp, filesize($path));
-
-    fclose($fp);
+$filepath = "files/file.docx";
+// месторасположение файла
 
 
+//исьмо с вложением состоит из нескольких частей, которые разделяются разделителем
 
-    $boundary = "--".md5(uniqid(time())); // генерируем разделитель
+$boundary = "--".md5(uniqid(time())); 
+// генерируем разделитель
 
-    $headers .= "MIME-Version: 1.0\n";
+$mailheaders = "MIME-Version: 1.0;\r\n"; 
+$mailheaders .="Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n"; 
+// разделитель указывается в заголовке в параметре boundary 
 
-    $headers .="Content-Type: multipart/mixed; boundary=\"$boundary\"\n";
+$mailheaders .= "From: $user_email <$user_email>\r\n"; 
+$mailheaders .= "Reply-To: $user_email\r\n"; 
 
-    $multipart .= "--$boundary\n";
-
-    $kod = 'koi8-r'; // или $kod = 'windows-1251';
-
-    $multipart .= "Content-Type: text/html; charset=$kod\n";
-
-    $multipart .= "Content-Transfer-Encoding: Quot-Printed\n\n";
-
-    $multipart .= "$html\n\n";
-
-
-
-    $message_part = "--$boundary\n";
-
-    $message_part .= "Content-Type: application/octet-stream\n";
-
-    $message_part .= "Content-Transfer-Encoding: base64\n";
-
-    $message_part .= "Content-Disposition: attachment; filename = \"".$path."\"\n\n";
-
-    $message_part .= chunk_split(base64_encode($file))."\n";
-
-    $multipart .= $message_part."--$boundary--\n";
-
+$multipart = "--$boundary\r\n"; 
+$multipart .= "Content-Type: text/html; charset=windows-1251\r\n";
+$multipart .= "Content-Transfer-Encoding: base64\r\n";    
+$multipart .= \r\n;
+$multipart .= chunk_split(base64_encode(iconv("utf8", "windows-1251", $message)));
+// первая часть само сообщение
+ 
+// Закачиваем файл 
+	$fp = fopen($filepath,"r"); 
+		if (!$fp) 
+		{ 
+			print "Не удается открыть файл22"; 
+			exit(); 
+		} 
+$file = fread($fp, filesize($filepath)); 
+fclose($fp); 
+// чтение файла
 
 
-    if(!mail($to, $thm, $multipart, $headers))
+$message_part = "\r\n--$boundary\r\n"; 
+$message_part .= "Content-Type: application/octet-stream; name=\"$filename\"\r\n";  
+$message_part .= "Content-Transfer-Encoding: base64\r\n"; 
+$message_part .= "Content-Disposition: attachment; filename=\"$filename\"\r\n"; 
+$message_part .= \r\n;
+$message_part .= chunk_split(base64_encode($file));
+$message_part .= "\r\n--$boundary--\r\n";
+// второй частью прикрепляем файл, можно прикрепить два и более файла
 
-    {
+$multipart .= $message_part;
 
-      echo "К сожалению, письмо не отправлено";
+mail($to,$subject,$multipart,$mailheaders);
+// отправляем письмо 
 
-      exit();
-
-    }
-
-  }
-
-?>
+//удаляем файлы через 60 сек.
+if (time_nanosleep(5, 0)) {
+		unlink($filepath);
+}
