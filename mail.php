@@ -4,7 +4,7 @@
 
   // Закачиваем файл
 
-  $path = "files/file.docx";
+  $path = "files/1.pdf";
 
   $picture = $path;
 
@@ -15,80 +15,50 @@
 
   $msg = "Текст сообщения";
 
-  $mail_to = "<kashirin1242@gmail.com>";
+  $mail_to = $_POST['email'];
 
-  // Отправляем почтовое сообщение
-
-  send_mail($mail_to, $thm, $msg, $picture);
-
-  // Вспомогательная функция для отправки почтового сообщения с вложением
-
-  function send_mail($to, $thm, $html, $path)
-
-  {
-
-    $fp = fopen($path,"r");
-
-    if (!$fp)
-
-    {
-
-      print "Файл $path не может быть прочитан";
-
-      exit();
-
-    }
-
-    $file = fread($fp, filesize($path));
-
-    fclose($fp);
-
-
-
-    $boundary = "--".md5(uniqid(time())); // генерируем разделитель
-
-    $headers .= "MIME-Version: 1.0\n";
-
-    $headers .="Content-Type: multipart/mixed; boundary=\"$boundary\"\n";
-
-    $multipart .= "--$boundary\n";
-
-    $kod = 'u';
+  // Отправляем почтовое сообщение 
+  if(empty($picture)) mail($mail_to, $thm, $msg); 
+  else send_mail($mail_to, $thm, $msg, $picture); 
+  // Вспомогательная функция для отправки почтового сообщения с вложением (Trianon)
+  function send_mail($mail_to, $thema, $html, $path)   
+  { if ($path) {  
+    $fp = fopen($path,"rb");   
+    if (!$fp)   
+    { print "Cannot open file";   
+      exit();   
+    }   
+    $file = fread($fp, filesize($path));   
+    fclose($fp);   
+    }  
+    $name = "1.pdf"; // в этой переменной надо сформировать имя файла (без всякого пути)  
+    $EOL = "\r\n"; // ограничитель строк, некоторые почтовые сервера требуют \n - подобрать опытным путём
+    $boundary     = "--".md5(uniqid(time()));  // любая строка, которой не будет ниже в потоке данных.  
+    $headers    = "MIME-Version: 1.0;$EOL";   
+    $headers   .= "Content-Type: multipart/mixed; boundary=\"$boundary\"$EOL";  
+    $headers   .= "From: address@server.com";  
       
-    // $kod = 'windows-1251';
+    $multipart  = "--$boundary$EOL";   
+    $multipart .= "Content-Type: text/html; charset=utf-8$EOL";   
+    $multipart .= "Content-Transfer-Encoding: base64$EOL";   
+    $multipart .= $EOL; // раздел между заголовками и телом html-части 
+    $multipart .= chunk_split(base64_encode($html));   
 
-    $multipart .= "Content-Type: text/html; charset=$kod\n";
+    $multipart .=  "$EOL--$boundary$EOL";   
+    $multipart .= "Content-Type: application/octet-stream; name=\"$name\"$EOL";   
+    $multipart .= "Content-Transfer-Encoding: base64$EOL";   
+    $multipart .= "Content-Disposition: attachment; filename=\"$name\"$EOL";   
+    $multipart .= $EOL; // раздел между заголовками и телом прикрепленного файла 
+    $multipart .= chunk_split(base64_encode($file));   
 
-    $multipart .= "Content-Transfer-Encoding: Quot-Printed\n\n";
-
-    $multipart .= "$html\n\n";
-
-
-
-    $message_part = "--$boundary\n";
-
-    $message_part .= "Content-Type: application/octet-stream\n";
-
-    $message_part .= "Content-Transfer-Encoding: base64\n";
-
-    $message_part .= "Content-Disposition: attachment; filename = \"".$path."\"\n\n";
-
-    $message_part .= chunk_split(base64_encode($file))."\n";
-
-    $multipart .= $message_part."--$boundary--\n";
-
-
-
-    if(!mail($to, $thm, $multipart, $headers))
-
-    {
-
-      echo "К сожалению, письмо не отправлено";
-
-      exit();
-
-    }
-
+    $multipart .= "$EOL--$boundary--$EOL";   
+      
+        if(!mail($mail_to, $thema, $multipart, $headers))   
+         {return False;           //если не письмо не отправлено
+      }  
+    else { //// если письмо отправлено
+    return True;  
+    }  
+  exit;  
   }
-
 ?>
