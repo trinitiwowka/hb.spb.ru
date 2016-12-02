@@ -128,7 +128,29 @@ $(document).ready(function() {
 
 				console.log('price-phone');
 
-				// сдесь код для кнопки на смс
+                // сдесь код для кнопки на смс
+				var apiUrl= "https://gate.smsaero.ru/send/?user=trinitiwowka@gmail.com&password=uftSUR8fDhWOl0RiqvLxOrh2jMiQ&to=";
+				var temp1=$("#sms_phone").val();
+				var temp2="";
+				for(var i=0;i<temp1.length;++i)
+				{
+					if(temp1[i]>='0'&&temp1[i]<='9')
+					temp2+=temp1[i];
+				}
+				apiUrl+=temp2;
+				apiUrl+="&text=123hb.spb.ru&from=news";
+
+				$.ajax({
+					type: "POST",
+					url: apiUrl,
+					// dataType: "json",
+					data: "name="+name+"&phone="+phone+"&"+sbt+"="+submit+"&email="+email+"&ques="+ques+"&formname="+formname+"&ref="+ref+"&utm="+request_url+"&sitename="+sitename+"&emailsarr="+emailsarr,
+					success: function (data) {
+						console.log(data);
+
+					}
+				});
+				//
 
 				thxPrice();
 			} else {
